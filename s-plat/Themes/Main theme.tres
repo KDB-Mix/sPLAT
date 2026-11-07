@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://c5gi5i80o15ro"]
+
+[ext_resource type="FontFile" uid="uid://nahj7odjgt5d" path="res://Fonts/DotGothic16-Regular.ttf" id="1_beuoa"]
+
+[resource]
+Label/fonts/font = ExtResource("1_beuoa")
