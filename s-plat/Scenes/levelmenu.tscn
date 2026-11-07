@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cttglywae6jqv"]
 
-[ext_resource type="Script" uid="uid://b0o2jkasm2cj6" path="res://level_menu.gd" id="1_xmjvh"]
+[ext_resource type="Script" uid="uid://b0o2jkasm2cj6" path="res://Scripts/level_menu.gd" id="1_uxc0f"]
 
 [node name="Node2D" type="Node2D" unique_id=994590919]
-script = ExtResource("1_xmjvh")
+script = ExtResource("1_uxc0f")
 
 [node name="Button" type="Button" parent="." unique_id=1428396012]
 offset_left = 76.0
