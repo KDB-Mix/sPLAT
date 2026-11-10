@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bws86drn8n3n8"]
 
 [ext_resource type="Script" uid="uid://csgw41ay5d83m" path="res://Scripts/player.gd" id="1_1jxqw"]
-[ext_resource type="Texture2D" uid="uid://h7twroxpxo4q" path="res://Player model/Player Model/Dude_Monster_Death_8.png" id="4_n7ghd"]
 [ext_resource type="Texture2D" uid="uid://dii7xv25b1i0d" path="res://Sprites/player bored.png" id="4_tx1dd"]
 [ext_resource type="Texture2D" uid="uid://coqwixrkmci8q" path="res://Sprites/player idle.png" id="5_f1ek2"]
 [ext_resource type="Texture2D" uid="uid://pyp1xx1i7i7h" path="res://Sprites/player fall.png" id="5_tx1dd"]
@@ -104,38 +103,6 @@ region = Rect2(672, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_8eeqe"]
 atlas = ExtResource("4_tx1dd")
 region = Rect2(704, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dx0e4"]
-atlas = ExtResource("4_n7ghd")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jm5j8"]
-atlas = ExtResource("4_n7ghd")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7hik5"]
-atlas = ExtResource("4_n7ghd")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qtqh7"]
-atlas = ExtResource("4_n7ghd")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2wuci"]
-atlas = ExtResource("4_n7ghd")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iruf7"]
-atlas = ExtResource("4_n7ghd")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j5n4i"]
-atlas = ExtResource("4_n7ghd")
-region = Rect2(192, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_634y6"]
-atlas = ExtResource("4_n7ghd")
-region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tx1dd"]
 atlas = ExtResource("5_f1ek2")
@@ -299,35 +266,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dx0e4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jm5j8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7hik5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qtqh7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2wuci")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iruf7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j5n4i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_634y6")
-}],
-"loop": 1,
-"name": &"death",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_tx1dd")
 }, {
 "duration": 1.0,
@@ -463,7 +401,7 @@ shape = SubResource("RectangleShape2D_78qe6")
 z_index = 1
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_rresx")
-animation = &"run"
+animation = &"bored"
 
 [node name="animated upper" type="AnimatedSprite2D" parent="." unique_id=1713364553]
 position = Vector2(0, -16)
