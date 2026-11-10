@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 @onready var animated_upper: AnimatedSprite2D = $"animated upper"
@@ -5,24 +6,33 @@ extends CharacterBody2D
 
 var SPEED = 200.0
 var JUMP_VELOCITY = -500.0
+var jump_multiplier = 1
+var gravity_multiplier = 1
 enum state{
 	jump, 
 	wleft,
 	wright,
 	idle,
-	bored
+	bored,
+	fall,
+	jump_transition,
 	}
 var State: state=state.idle
 
 var bored_timer: float
 
+var respawnPos: Vector2
+
+func _ready() -> void:
+	respawnPos = global_position
+
 func _physics_process(delta: float) -> void:
 	bored_timer += delta
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * delta * gravity_multiplier
 
-	if Input.is_action_just_pressed("Up") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if Input.is_action_pressed("Up") and is_on_floor():
+		velocity.y = JUMP_VELOCITY * jump_multiplier
 		bored_timer = 0
 		
 	var direction := Input.get_axis("Left", "Right")
@@ -34,22 +44,30 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if not is_on_floor():
-		if velocity.y < 0:
+		if velocity.y < -100:
 			State = state.jump
+		elif velocity.y > 100:
+			State = state.fall
 		else:
-			State = state.idle
+			if State == state.jump or State == state.jump_transition:
+				State = state.jump_transition
+			else:
+				State = state.fall
+				
 	elif direction < 0:
 		State = state.wleft
-		animated_upper.flip_h=-1
-		animated_lower.flip_h=-1
 	elif direction > 0:
 		State= state.wright
-		animated_upper.flip_h=0
-		animated_lower.flip_h=0
 	elif bored_timer >= 10 or animated_lower.animation == "bored":
 		State = state.bored
 	else:
 		State = state.idle
+	if direction < 0:
+		animated_upper.flip_h=true
+		animated_lower.flip_h=true
+	elif direction > 0:
+		animated_upper.flip_h=false
+		animated_lower.flip_h=false
 		
 
 	move_and_slide()
@@ -62,21 +80,46 @@ func play_ani ():
 			animated_upper.visible = false
 			animated_lower.speed_scale = 1
 		state.wleft:
-			animated_lower.play("run")
-			animated_upper.play("head running")
-			animated_upper.visible = true
-			animated_lower.speed_scale = velocity.x/200
+			if velocity.x != 0:
+				animated_lower.play("run")
+				animated_upper.play("head running")
+				animated_upper.visible = true
+				animated_lower.speed_scale = velocity.x/200
+				animated_upper.speed_scale = velocity.x/200
+			else:
+				animated_lower.play("default")
+				animated_upper.visible = false
+				animated_lower.speed_scale = 1
 		state.wright:
-			animated_lower.play("run")
-			animated_upper.play("head running")
-			animated_upper.visible = true
-			animated_lower.speed_scale = velocity.x/200
+			if velocity.x != 0:
+				animated_lower.play("run")
+				animated_upper.play("head running")
+				animated_upper.visible = true
+				animated_lower.speed_scale = velocity.x/200
+				animated_upper.speed_scale = velocity.x/200
+			else:
+				animated_lower.play("default")
+				animated_upper.visible = false
+				animated_lower.speed_scale = 1
 		state.idle:
 			animated_lower.play("default")
 			animated_upper.visible = false
 			animated_lower.speed_scale = 1
 		state.bored:
 			animated_lower.play("bored")
+			animated_upper.visible = false
+			animated_lower.speed_scale = 1
+		state.fall:
+			animated_lower.play("fall")
+			animated_upper.visible = false
+			animated_lower.speed_scale = 1
+		state.jump_transition:
+			if velocity.y < -60:
+				animated_lower.play("jump_transition_rise")
+			elif velocity.y > 60:
+				animated_lower.play("jump_transition_fall")
+			else:
+				animated_lower.play("jump_transiiton_zero")
 			animated_upper.visible = false
 			animated_lower.speed_scale = 1
 
@@ -86,3 +129,8 @@ func _on_animated_lower_animation_finished() -> void:
 		animated_lower.play("default")
 		State = state.idle
 		bored_timer = 0
+func death():
+	global_position = respawnPos
+	
+	if get_parent().has_method("reset_level"):
+		get_parent().reset_level()
