@@ -40,7 +40,7 @@ func save_file():
 	else:
 		initialize_defaults()
 		
-func level_done(level: int):
+func level_done(level: float):
 	if !level in saveData.get(LEVELS_DONE_KEY, []):
 		saveData[LEVELS_DONE_KEY].append(level)
 		save_file()

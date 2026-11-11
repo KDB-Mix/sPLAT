@@ -8,4 +8,3 @@ func _on_button_button_down() -> void:
 		get_tree().change_scene_to_packed(levem_menu)
 	else:
 		get_tree().change_scene_to_packed(tutorial_level)
-	print(SaveManager.saveData.get(SaveManager.LEVELS_DONE_KEY, []))

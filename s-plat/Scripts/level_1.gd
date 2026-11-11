@@ -31,4 +31,5 @@ func _on_door_body_entered(body: Node2D) -> void:
 		door.get_child(0).region_rect.position.x = 32
 		SfxHandler.door_shut.play()
 		await get_tree().create_timer(.7).timeout
+		SaveManager.level_done(1)
 		get_tree().change_scene_to_packed(next_scene)

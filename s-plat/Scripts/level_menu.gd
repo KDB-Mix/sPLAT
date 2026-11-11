@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+var tutorial_scene: PackedScene = load("res://Scenes/main.tscn")
 var level_1_scene: PackedScene = load("res://Scenes/Levels/level_1.tscn")
 var level_2_scene: PackedScene
 var level_3_scene: PackedScene
@@ -39,3 +40,7 @@ func _on_level_4_button_down() -> void:
 
 func _on_level_5_button_down() -> void:
 	get_tree().change_scene_to_packed(level_5_scene)
+
+
+func _on_level_tutorial_button_down() -> void:
+	get_tree().change_scene_to_packed(tutorial_scene)
