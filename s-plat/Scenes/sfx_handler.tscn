@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://q3k7jyqoxhnq"]
+
+[ext_resource type="Script" uid="uid://dy7rvcgw1qenx" path="res://Scripts/sfx_handler.gd" id="1_fo5oc"]
+[ext_resource type="AudioStream" uid="uid://btjlrv8l7wvut" path="res://SFX/door shut.mp3" id="2_snv5f"]
+
+[node name="SFX handler" type="Node2D" unique_id=274645694]
+script = ExtResource("1_fo5oc")
+
+[node name="Door shut" type="AudioStreamPlayer2D" parent="." unique_id=1923611368]
+stream = ExtResource("2_snv5f")

@@ -39,7 +39,7 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Door" parent="." unique_id=848025349 instance=ExtResource("4_jjvhh")]
-position = Vector2(148, 33)
+position = Vector2(148, 48)
 
 [node name="spikes counter 3" type="Node2D" parent="." unique_id=2106954673]
 visible = false

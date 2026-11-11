@@ -1,11 +1,41 @@
-extends Node2D
+extends CanvasLayer
+
+var level_1_scene: PackedScene = load("res://Scenes/Levels/level_1.tscn")
+var level_2_scene: PackedScene
+var level_3_scene: PackedScene
+var level_4_scene: PackedScene
+var level_5_scene: PackedScene
+
+@onready var level_1: Button = $"Level 1"
+@onready var level_2: Button = $"Level 2"
+@onready var level_3: Button = $"Level 3"
+@onready var level_4: Button = $"Level 4"
+@onready var level_5: Button = $"Level 5"
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
-	
+	if 0.0 in SaveManager.saveData.get(SaveManager.LEVELS_DONE_KEY, []):
+		level_1.disabled = false
+	if 1.0 in SaveManager.saveData.get(SaveManager.LEVELS_DONE_KEY, []):
+		level_2.disabled = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+
+func _on_level_1_button_down() -> void:
+	get_tree().change_scene_to_packed(level_1_scene)
+
+
+func _on_level_2_button_down() -> void:
+	get_tree().change_scene_to_packed(level_2_scene)
+
+
+func _on_level_3_button_down() -> void:
+	get_tree().change_scene_to_packed(level_3_scene)
+
+
+func _on_level_4_button_down() -> void:
+	get_tree().change_scene_to_packed(level_4_scene)
+
+
+func _on_level_5_button_down() -> void:
+	get_tree().change_scene_to_packed(level_5_scene)

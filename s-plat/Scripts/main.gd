@@ -6,6 +6,8 @@ extends Node2D
 @onready var spikes_counter_3: Node2D = $"spikes counter 3"
 @onready var spikes_counter_4: Node2D = $"spikes counter 4"
 @onready var player: Player = $player
+@onready var door: Area2D = $Door
+var Level1: PackedScene = load("res://Scenes/Levels/level_1.tscn")
 
 var level_counter = 0
 # Called when the node enters the scene tree for the first time.
@@ -40,7 +42,6 @@ func _process(_delta: float) -> void:
 
 func _on_door_body_entered(body: Node2D) -> void:
 	if body is Player:
-		body.global_position = Vector2(-127, 48)
 		match level_counter:
 			0:
 				tilemap_counter_2.enabled = true
@@ -76,4 +77,15 @@ func _on_door_body_entered(body: Node2D) -> void:
 				tutorial_text.text = "You finished the tutorial"
 			6:
 				tutorial_text.text = "Get ready for the nextlevel"
+			7:
+				body.speed_multiplier = 0
+				body.global_position = door.global_position
+				await get_tree().create_timer(.7).timeout
+				body.visible = false
+				door.get_child(0).region_rect.position.x = 32
+				SfxHandler.door_shut.play()
+				await get_tree().create_timer(.7).timeout
+				get_tree().change_scene_to_packed(Level1)
+				SaveManager.level_done(0)
+		body.global_position = Vector2(-127, 48)
 		level_counter += 1

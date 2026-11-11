@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://btjlrv8l7wvut"
+path="res://.godot/imported/door shut.mp3-96b3ac3d13d35b841cb4e392436ed6f0.mp3str"
+
+[deps]
+
+source_file="res://SFX/door shut.mp3"
+dest_files=["res://.godot/imported/door shut.mp3-96b3ac3d13d35b841cb4e392436ed6f0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,12 +1,11 @@
 extends CanvasLayer
 
+var tutorial_level: PackedScene = load("res://Scenes/main.tscn")
+var levem_menu: PackedScene = load("res://Scenes/levelmenu.tscn")
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	$Button.pressed.connect(level_1)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-func level_1():
-	get_tree().change_scene_to_file("res://Scenes/main.tscn")
+func _on_button_button_down() -> void:
+	if 0.0 in SaveManager.saveData.get(SaveManager.LEVELS_DONE_KEY, []):
+		get_tree().change_scene_to_packed(levem_menu)
+	else:
+		get_tree().change_scene_to_packed(tutorial_level)
+	print(SaveManager.saveData.get(SaveManager.LEVELS_DONE_KEY, []))

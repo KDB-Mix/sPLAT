@@ -1,6 +1,67 @@
 [gd_resource type="Theme" format=3 uid="uid://c5gi5i80o15ro"]
 
+[ext_resource type="Texture2D" uid="uid://deqjej17gmnnc" path="res://Sprites/button rect.png" id="1_2501c"]
 [ext_resource type="FontFile" uid="uid://nahj7odjgt5d" path="res://Fonts/DotGothic16-Regular.ttf" id="1_beuoa"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_soc6n"]
+atlas = ExtResource("1_2501c")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uxc0f"]
+texture = SubResource("AtlasTexture_soc6n")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwsvd"]
+atlas = ExtResource("1_2501c")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ldh8x"]
+texture = SubResource("AtlasTexture_lwsvd")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_158mb"]
+atlas = ExtResource("1_2501c")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cayip"]
+texture = SubResource("AtlasTexture_158mb")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhh6f"]
+atlas = ExtResource("1_2501c")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_is5ay"]
+texture = SubResource("AtlasTexture_xhh6f")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6quxy"]
+atlas = ExtResource("1_2501c")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2501c"]
+texture = SubResource("AtlasTexture_6quxy")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
 [resource]
+Button/styles/disabled = SubResource("StyleBoxTexture_uxc0f")
+Button/styles/focus = SubResource("StyleBoxTexture_ldh8x")
+Button/styles/hover = SubResource("StyleBoxTexture_cayip")
+Button/styles/normal = SubResource("StyleBoxTexture_is5ay")
+Button/styles/pressed = SubResource("StyleBoxTexture_2501c")
 Label/fonts/font = ExtResource("1_beuoa")

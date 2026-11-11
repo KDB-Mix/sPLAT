@@ -408,4 +408,8 @@ position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_iilk7")
 animation = &"none"
 
+[node name="Cyote timer" type="Timer" parent="." unique_id=881525822]
+wait_time = 0.05
+
 [connection signal="animation_finished" from="animated lower" to="." method="_on_animated_lower_animation_finished"]
+[connection signal="timeout" from="Cyote timer" to="." method="_on_cyote_timer_timeout"]
