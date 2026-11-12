@@ -19,7 +19,12 @@ enum state{
 	fall,
 	jump_transition,
 	}
+
+enum floor{
+	floor, ciel
+}
 var State: state=state.idle
+var floor_condition: floor = floor.floor 
 
 var bored_timer: float
 
@@ -33,12 +38,13 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	bored_timer += delta
-	if not is_on_floor():
+	if not is_floored():
 		velocity += get_gravity() * delta * gravity_multiplier
-	if wasOnFloor and !is_on_floor():
+		velocity.y = min(velocity.y, 1000)
+	if wasOnFloor and !is_floored():
 		cyote = true
 		cyote_timer.start()
-	if Input.is_action_pressed("Up") and (is_on_floor() || cyote):
+	if Input.is_action_pressed("Up") and (is_floored() || cyote):
 		velocity.y = JUMP_VELOCITY * jump_multiplier
 		bored_timer = 0
 		cyote = false
@@ -51,7 +57,7 @@ func _physics_process(delta: float) -> void:
 		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	if not is_on_floor():
+	if not is_floored():
 		if velocity.y < -100:
 			State = state.jump
 		elif velocity.y > 100:
@@ -76,7 +82,7 @@ func _physics_process(delta: float) -> void:
 	elif direction > 0:
 		animated_upper.flip_h=false
 		animated_lower.flip_h=false
-	wasOnFloor = is_on_floor()
+	wasOnFloor = is_floored()
 	move_and_slide()
 	play_ani()
 func play_ani ():
@@ -145,3 +151,9 @@ func death():
 
 func _on_cyote_timer_timeout() -> void:
 	cyote = false
+	
+func is_floored() -> bool:
+	if floor_condition == floor.floor:
+		return is_on_floor()
+	else:
+		return	is_on_ceiling()

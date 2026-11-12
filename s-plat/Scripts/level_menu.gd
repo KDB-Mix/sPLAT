@@ -2,8 +2,8 @@ extends CanvasLayer
 
 var tutorial_scene: PackedScene = load("res://Scenes/main.tscn")
 var level_1_scene: PackedScene = load("res://Scenes/Levels/level_1.tscn")
-var level_2_scene: PackedScene
-var level_3_scene: PackedScene
+var level_2_scene: PackedScene = load("res://Scenes/Levels/level_2.tscn")
+var level_3_scene: PackedScene = load("res://Scenes/Levels/level_3.tscn")
 var level_4_scene: PackedScene
 var level_5_scene: PackedScene
 
@@ -20,6 +20,10 @@ func _ready() -> void:
 		level_1.disabled = false
 	if 1.0 in SaveManager.saveData.get(SaveManager.LEVELS_DONE_KEY, []):
 		level_2.disabled = false
+	if 2.0 in SaveManager.saveData.get(SaveManager.LEVELS_DONE_KEY, []):
+		level_3.disabled = false
+	if 3.0 in SaveManager.saveData.get(SaveManager.LEVELS_DONE_KEY, []):
+		level_4.disabled = false
 
 
 func _on_level_1_button_down() -> void:

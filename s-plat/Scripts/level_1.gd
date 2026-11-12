@@ -3,7 +3,7 @@ extends Node2D
 @onready var togglable_1: TileMapLayer = $"togglable 1"
 @onready var door: Area2D = $Door
 
-var next_scene: PackedScene = load("res://Scenes/menu.tscn")
+var next_scene: PackedScene = load("res://Scenes/Levels/level_2.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -24,6 +24,7 @@ func _input(event: InputEvent) -> void:
 
 func _on_door_body_entered(body: Node2D) -> void:
 	if body is Player:
+		body.jump_multiplier = 0
 		body.speed_multiplier = 0
 		body.global_position = door.global_position
 		await get_tree().create_timer(.7).timeout
