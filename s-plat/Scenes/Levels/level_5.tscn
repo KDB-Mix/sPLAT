@@ -194,3 +194,5 @@ position = Vector2(138, 128)
 position = Vector2(104, 240)
 
 [node name="every level overlay" parent="." unique_id=2035021461 instance=ExtResource("6_2634h")]
+
+[connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]
