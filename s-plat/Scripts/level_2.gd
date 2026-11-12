@@ -16,6 +16,7 @@ func _input(event: InputEvent) -> void:
 		player.animated_upper.offset.y = 4
 		player.gravity_multiplier = -1
 		player.floor_condition = player.floor.ciel
+		SfxHandler.click.play(.15)
 	elif event.is_action_pressed("action2"):
 		player.animated_lower.flip_v = false
 		player.animated_lower.offset.y = 0
@@ -23,6 +24,7 @@ func _input(event: InputEvent) -> void:
 		player.animated_upper.offset.y = 0
 		player.gravity_multiplier = 1
 		player.floor_condition = player.floor.floor
+		SfxHandler.click.play(.15)
 
 
 func _on_door_body_entered(body: Node2D) -> void:

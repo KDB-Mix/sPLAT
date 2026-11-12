@@ -5,17 +5,19 @@ extends Node2D
 @onready var progress_bar: TextureProgressBar = $ProgressBar
 @onready var label: Label = $Label
 
-var next_scene: PackedScene = load("res://Scenes/menu.tscn")
+var next_scene: PackedScene = load("res://Scenes/Levels/level_4.tscn")
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("action1"):
 		progress_bar.value += .2
 		player.gravity_multiplier = progress_bar.value
 		label.text = "Gravity bar: " + str(progress_bar.value)
+		SfxHandler.click.play(.15)
 	elif event.is_action_pressed("action2"):
 		progress_bar.value -= .2
 		player.gravity_multiplier = progress_bar.value
 		label.text = "Gravity bar: " + str(progress_bar.value)
+		SfxHandler.click.play(.15)
 
 
 func _on_door_body_entered(body: Node2D) -> void:

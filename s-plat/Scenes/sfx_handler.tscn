@@ -2,9 +2,33 @@
 
 [ext_resource type="Script" uid="uid://dy7rvcgw1qenx" path="res://Scripts/sfx_handler.gd" id="1_fo5oc"]
 [ext_resource type="AudioStream" uid="uid://btjlrv8l7wvut" path="res://SFX/door shut.mp3" id="2_snv5f"]
+[ext_resource type="AudioStream" uid="uid://7yntgv3k2tyo" path="res://SFX/footstep.wav" id="3_1hfp3"]
+[ext_resource type="AudioStream" uid="uid://c3ah38xd5ge8q" path="res://SFX/Pickup.wav" id="3_5dg2u"]
+[ext_resource type="AudioStream" uid="uid://cgm20ywsbg0cj" path="res://SFX/Death.wav" id="3_snv5f"]
+[ext_resource type="AudioStream" uid="uid://weiv770s1whn" path="res://SFX/stone grinding.mp3" id="4_i4wic"]
+[ext_resource type="AudioStream" uid="uid://btvs2bs3k5ewd" path="res://SFX/Stone moving.wav" id="5_dgahm"]
+[ext_resource type="AudioStream" uid="uid://cpkjjvbwq74iv" path="res://SFX/click.mp3" id="8_dgahm"]
 
 [node name="SFX handler" type="Node2D" unique_id=274645694]
 script = ExtResource("1_fo5oc")
 
 [node name="Door shut" type="AudioStreamPlayer2D" parent="." unique_id=1923611368]
 stream = ExtResource("2_snv5f")
+
+[node name="Footstep" type="AudioStreamPlayer2D" parent="." unique_id=204503447]
+stream = ExtResource("3_1hfp3")
+
+[node name="Stone grinding" type="AudioStreamPlayer2D" parent="." unique_id=1647566135]
+stream = ExtResource("4_i4wic")
+
+[node name="Stone moving" type="AudioStreamPlayer2D" parent="." unique_id=117646005]
+stream = ExtResource("5_dgahm")
+
+[node name="Pickup" type="AudioStreamPlayer2D" parent="." unique_id=1476542886]
+stream = ExtResource("3_5dg2u")
+
+[node name="Death" type="AudioStreamPlayer2D" parent="." unique_id=1087080693]
+stream = ExtResource("3_snv5f")
+
+[node name="click" type="AudioStreamPlayer2D" parent="." unique_id=1091502099]
+stream = ExtResource("8_dgahm")

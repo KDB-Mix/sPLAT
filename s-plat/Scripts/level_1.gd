@@ -17,9 +17,11 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("action1"):
 		togglable_0.enabled = true
 		togglable_1.enabled = false
+		SfxHandler.click.play(.15)
 	elif event.is_action_pressed("action2"):
 		togglable_0.enabled = false
 		togglable_1.enabled = true
+		SfxHandler.click.play(.15)
 
 
 func _on_door_body_entered(body: Node2D) -> void:

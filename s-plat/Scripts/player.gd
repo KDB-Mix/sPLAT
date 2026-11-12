@@ -51,6 +51,8 @@ func _physics_process(delta: float) -> void:
 		
 	var direction := Input.get_axis("Left", "Right")
 	if direction:
+		if !SfxHandler.footstep.playing and is_floored() and velocity.x != 0:
+			SfxHandler.footstep.playing = true
 		velocity.x = direction * SPEED * speed_multiplier
 		bored_timer = 0
 		

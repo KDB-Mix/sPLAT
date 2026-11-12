@@ -22,15 +22,31 @@ func _process(_delta: float) -> void:
 			movable_object.global_position.y = 48
 			if Input.is_action_pressed("action2"):
 				movable_object.global_position.y -= 16*_delta
+				if !SfxHandler.stone_grinding.playing:
+					SfxHandler.stone_grinding.play()
+			else:
+				SfxHandler.stone_grinding.stop()
 		elif movable_object.global_position.y <= 0:
 			movable_object.global_position.y = 0
 			if Input.is_action_pressed("action1"):
 				movable_object.global_position.y += 16*_delta
+				if !SfxHandler.stone_grinding.playing:
+					SfxHandler.stone_grinding.play()
+			else:
+				SfxHandler.stone_grinding.stop()
 		else:
 			if Input.is_action_pressed("action1"):
 				movable_object.global_position.y += 16*_delta
+				if !SfxHandler.stone_grinding.playing:
+					SfxHandler.stone_grinding.play()
 			elif Input.is_action_pressed("action2"):
 				movable_object.global_position.y -= 16*_delta
+				if !SfxHandler.stone_grinding.playing:
+					SfxHandler.stone_grinding.play()
+			else:
+				SfxHandler.stone_grinding.stop()
+	else:
+		SfxHandler.stone_grinding.stop()
 	if level_counter == 4:
 		if Input.is_action_pressed("action1"):
 			player.velocity.y = -64
@@ -87,5 +103,7 @@ func _on_door_body_entered(body: Node2D) -> void:
 				await get_tree().create_timer(.7).timeout
 				get_tree().change_scene_to_packed(Level1)
 				SaveManager.level_done(0)
+				return
+		SfxHandler.pickup.play()
 		body.global_position = Vector2(-127, 48)
 		level_counter += 1

@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bpag2egt0behh"]
+
+[ext_resource type="Script" uid="uid://3k57j1foxdmt" path="res://Scripts/every_level_overlay.gd" id="1_s0lu2"]
+[ext_resource type="Texture2D" uid="uid://dn84lo0olcikk" path="res://Sprites/buttons.png" id="2_tpske"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iilk7"]
+atlas = ExtResource("2_tpske")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2501c"]
+atlas = ExtResource("2_tpske")
+region = Rect2(16, 0, 16, 16)
+
+[node name="every level overlay" type="CanvasLayer" unique_id=2035021461]
+script = ExtResource("1_s0lu2")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=816768568]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1165387076]
+layout_mode = 2
+
+[node name="reset" type="TextureButton" parent="MarginContainer/HBoxContainer" unique_id=1120079852]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.2
+texture_normal = SubResource("AtlasTexture_iilk7")
+stretch_mode = 3
+
+[node name="Home" type="TextureButton" parent="MarginContainer/HBoxContainer" unique_id=31438214]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.2
+texture_normal = SubResource("AtlasTexture_2501c")
+stretch_mode = 3
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=790705451]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="button_down" from="MarginContainer/HBoxContainer/reset" to="." method="_on_reset_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/Home" to="." method="_on_home_button_down"]

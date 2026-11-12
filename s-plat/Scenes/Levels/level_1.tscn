@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://mkemwytaae3x" path="res://Scripts/level_1.gd" id="1_iixi8"]
 [ext_resource type="PackedScene" uid="uid://bws86drn8n3n8" path="res://Scenes/player.tscn" id="2_3mqfk"]
 [ext_resource type="PackedScene" uid="uid://b851opsdl2hn1" path="res://Scenes/door.tscn" id="3_3mqfk"]
+[ext_resource type="PackedScene" uid="uid://bpag2egt0behh" path="res://Scenes/Levels/every_level_overlay.tscn" id="5_cyadu"]
 
 [node name="Level 1" type="Node2D" unique_id=632605947]
 script = ExtResource("1_iixi8")
@@ -26,5 +27,7 @@ position = Vector2(80, 80)
 
 [node name="Door" parent="." unique_id=848025349 instance=ExtResource("3_3mqfk")]
 position = Vector2(528, 208)
+
+[node name="every level overlay" parent="." unique_id=2035021461 instance=ExtResource("5_cyadu")]
 
 [connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]

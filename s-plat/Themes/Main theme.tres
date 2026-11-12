@@ -65,3 +65,7 @@ Button/styles/hover = SubResource("StyleBoxTexture_cayip")
 Button/styles/normal = SubResource("StyleBoxTexture_is5ay")
 Button/styles/pressed = SubResource("StyleBoxTexture_2501c")
 Label/fonts/font = ExtResource("1_beuoa")
+MarginContainer/constants/margin_bottom = 20
+MarginContainer/constants/margin_left = 20
+MarginContainer/constants/margin_right = 20
+MarginContainer/constants/margin_top = 20
