@@ -78,6 +78,10 @@ action2={
 ]
 }
 
+[internationalization]
+
+rendering/root_node_layout_direction=1
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

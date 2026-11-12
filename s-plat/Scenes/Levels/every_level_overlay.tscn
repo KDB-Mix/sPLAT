@@ -20,15 +20,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+layout_direction = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1165387076]
 layout_mode = 2
+layout_direction = 2
 
 [node name="reset" type="TextureButton" parent="MarginContainer/HBoxContainer" unique_id=1120079852]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.2
+layout_direction = 2
 texture_normal = SubResource("AtlasTexture_iilk7")
 stretch_mode = 3
 
@@ -37,12 +40,14 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.2
+layout_direction = 2
 texture_normal = SubResource("AtlasTexture_2501c")
 stretch_mode = 3
 
 [node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=790705451]
 layout_mode = 2
 size_flags_horizontal = 3
+layout_direction = 2
 
 [connection signal="button_down" from="MarginContainer/HBoxContainer/reset" to="." method="_on_reset_button_down"]
 [connection signal="button_down" from="MarginContainer/HBoxContainer/Home" to="." method="_on_home_button_down"]
