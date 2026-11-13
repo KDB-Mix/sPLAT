@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Node2D
 
 var tutorial_level: PackedScene = load("res://Scenes/main.tscn")
 var levem_menu: PackedScene = load("res://Scenes/levelmenu.tscn")

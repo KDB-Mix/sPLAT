@@ -24,37 +24,47 @@ region = Rect2(256, 0, 64, 64)
 
 [node name="Mobile Controls" type="CanvasLayer" unique_id=1904075907]
 
-[node name="Right" type="TouchScreenButton" parent="." unique_id=691026281]
+[node name="Control" type="Control" parent="." unique_id=2128431370]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Right" type="TouchScreenButton" parent="Control" unique_id=691026281]
 modulate = Color(1, 1, 1, 0.627451)
-position = Vector2(492, 258)
+position = Vector2(179, 84)
 texture_normal = SubResource("AtlasTexture_sy171")
 action = "Right"
 visibility_mode = 1
 
-[node name="Left" type="TouchScreenButton" parent="." unique_id=945150068]
+[node name="Left" type="TouchScreenButton" parent="Control" unique_id=945150068]
 modulate = Color(1, 1, 1, 0.627451)
-position = Vector2(402, 258)
+position = Vector2(89, 84)
 texture_normal = SubResource("AtlasTexture_nonny")
 action = "Left"
 visibility_mode = 1
 
-[node name="Up" type="TouchScreenButton" parent="." unique_id=540245872]
+[node name="Up" type="TouchScreenButton" parent="Control" unique_id=540245872]
 modulate = Color(1, 1, 1, 0.627451)
-position = Vector2(447, 189)
+position = Vector2(134, 15)
 texture_normal = SubResource("AtlasTexture_gchga")
 action = "Up"
 visibility_mode = 1
 
-[node name="Z" type="TouchScreenButton" parent="." unique_id=578672793]
+[node name="Z" type="TouchScreenButton" parent="Control" unique_id=578672793]
 modulate = Color(1, 1, 1, 0.627451)
-position = Vector2(63, 258)
+position = Vector2(-250, 84)
 texture_normal = SubResource("AtlasTexture_rkofp")
 action = "action1"
 visibility_mode = 1
 
-[node name="X" type="TouchScreenButton" parent="." unique_id=1662263935]
+[node name="X" type="TouchScreenButton" parent="Control" unique_id=1662263935]
 modulate = Color(1, 1, 1, 0.627451)
-position = Vector2(151, 258)
+position = Vector2(-162, 84)
 texture_normal = SubResource("AtlasTexture_khgqv")
 action = "action2"
 visibility_mode = 1

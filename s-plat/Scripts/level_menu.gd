@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Node2D
 
 var tutorial_scene: PackedScene = load("res://Scenes/main.tscn")
 var level_1_scene: PackedScene = load("res://Scenes/Levels/level_1.tscn")
@@ -7,11 +7,11 @@ var level_3_scene: PackedScene = load("res://Scenes/Levels/level_3.tscn")
 var level_4_scene: PackedScene = load("res://Scenes/Levels/level_4.tscn")
 var level_5_scene: PackedScene = load("res://Scenes/Levels/level_5.tscn")
 
-@onready var level_1: Button = $"Level 1"
-@onready var level_2: Button = $"Level 2"
-@onready var level_3: Button = $"Level 3"
-@onready var level_4: Button = $"Level 4"
-@onready var level_5: Button = $"Level 5"
+@onready var level_1: Button = $"CanvasLayer/Level 1"
+@onready var level_2: Button = $"CanvasLayer/Level 2"
+@onready var level_3: Button = $"CanvasLayer/Level 3"
+@onready var level_4: Button = $"CanvasLayer/Level 4"
+@onready var level_5: Button = $"CanvasLayer/Level 5"
 
 
 # Called when the node enters the scene tree for the first time.

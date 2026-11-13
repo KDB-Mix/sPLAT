@@ -4,7 +4,7 @@ extends Node2D
 @onready var door: Area2D = $Door
 @onready var movable_blocks: TileMapLayer = $"Movable blocks"
 
-var blocks_pos = 0
+var blocks_pos = -335
 
 var finished = false
 
@@ -18,14 +18,14 @@ func _input(event: InputEvent) -> void:
 		return
 	if event.is_action_pressed("action2"):
 		blocks_pos += 16
-		if blocks_pos > 448:
-			blocks_pos = 448
+		if blocks_pos > 113:
+			blocks_pos = 113
 		else:
 			SfxHandler.stone_moving.play()
 	elif event.is_action_pressed("action1"):
 		blocks_pos -= 16
-		if blocks_pos < 0:
-			blocks_pos = 0
+		if blocks_pos < -335:
+			blocks_pos = -335
 		else:
 			SfxHandler.stone_moving.play()
 
