@@ -1,4 +1,5 @@
 original by khapilesh on github: https://github.com/khapilesh/sPLAT
+(some of the code before I forked it might be vibe coded, but I didn't use ai to code or make assets here)
 ___
 ### Forked for cont.d event by hack club
 ___
