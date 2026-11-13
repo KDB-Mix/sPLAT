@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://pmauw1c804j8"]
+
+[ext_resource type="Texture2D" uid="uid://b0yejtx8pid8g" path="res://Sprites/mobile controls.png" id="1_rkofp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sy171"]
+atlas = ExtResource("1_rkofp")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nonny"]
+atlas = ExtResource("1_rkofp")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gchga"]
+atlas = ExtResource("1_rkofp")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkofp"]
+atlas = ExtResource("1_rkofp")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khgqv"]
+atlas = ExtResource("1_rkofp")
+region = Rect2(256, 0, 64, 64)
+
+[node name="Mobile Controls" type="CanvasLayer" unique_id=1904075907]
+
+[node name="Right" type="TouchScreenButton" parent="." unique_id=691026281]
+modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(492, 258)
+texture_normal = SubResource("AtlasTexture_sy171")
+action = "Right"
+visibility_mode = 1
+
+[node name="Left" type="TouchScreenButton" parent="." unique_id=945150068]
+modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(402, 258)
+texture_normal = SubResource("AtlasTexture_nonny")
+action = "Left"
+visibility_mode = 1
+
+[node name="Up" type="TouchScreenButton" parent="." unique_id=540245872]
+modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(447, 189)
+texture_normal = SubResource("AtlasTexture_gchga")
+action = "Up"
+visibility_mode = 1
+
+[node name="Z" type="TouchScreenButton" parent="." unique_id=578672793]
+modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(63, 258)
+texture_normal = SubResource("AtlasTexture_rkofp")
+action = "action1"
+visibility_mode = 1
+
+[node name="X" type="TouchScreenButton" parent="." unique_id=1662263935]
+modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(151, 258)
+texture_normal = SubResource("AtlasTexture_khgqv")
+action = "action2"
+visibility_mode = 1

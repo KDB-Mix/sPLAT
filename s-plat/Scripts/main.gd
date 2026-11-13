@@ -66,6 +66,7 @@ func _on_door_body_entered(body: Node2D) -> void:
 				tilemap_counter_2.enabled = false
 				movable_object.enabled = true
 				tutorial_text.text = "Action buttons: Z/X"
+				movable_object.global_position.y = 0
 			2:
 				movable_object.enabled = false
 				spikes_counter_3.visible = true

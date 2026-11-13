@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bg4y2svp0ghuq" path="res://Scenes/spikes.tscn" id="4_yy6i0"]
 [ext_resource type="PackedScene" uid="uid://b851opsdl2hn1" path="res://Scenes/door.tscn" id="5_rc141"]
 [ext_resource type="PackedScene" uid="uid://bpag2egt0behh" path="res://Scenes/Levels/every_level_overlay.tscn" id="6_yy6i0"]
+[ext_resource type="PackedScene" uid="uid://pmauw1c804j8" path="res://Scenes/mobile_controls.tscn" id="7_167vu"]
 
 [sub_resource type="Gradient" id="Gradient_t8c31"]
 colors = PackedColorArray(0, 0, 0, 1, 1, 0, 0, 1)
@@ -175,5 +176,7 @@ position = Vector2(424, 264)
 rotation = 3.1415927
 
 [node name="every level overlay" parent="." unique_id=2035021461 instance=ExtResource("6_yy6i0")]
+
+[node name="Mobile Controls" parent="." unique_id=1904075907 instance=ExtResource("7_167vu")]
 
 [connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]

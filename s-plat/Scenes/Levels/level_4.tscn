@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bws86drn8n3n8" path="res://Scenes/player.tscn" id="2_xq0e5"]
 [ext_resource type="PackedScene" uid="uid://b851opsdl2hn1" path="res://Scenes/door.tscn" id="4_vwhew"]
 [ext_resource type="PackedScene" uid="uid://bpag2egt0behh" path="res://Scenes/Levels/every_level_overlay.tscn" id="5_jqrsn"]
+[ext_resource type="PackedScene" uid="uid://pmauw1c804j8" path="res://Scenes/mobile_controls.tscn" id="6_t74h0"]
 
 [node name="Level4" type="Node2D" unique_id=401053735]
 script = ExtResource("1_6grq2")
@@ -31,5 +32,7 @@ offset_bottom = 162.0
 text = "This level is a bit buggy, but it works, report any exploits"
 
 [node name="every level overlay" parent="." unique_id=2035021461 instance=ExtResource("5_jqrsn")]
+
+[node name="Mobile Controls" parent="." unique_id=1904075907 instance=ExtResource("6_t74h0")]
 
 [connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]
